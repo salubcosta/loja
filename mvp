@@ -1,0 +1,25 @@
+MVP - MINIMUM VIABLE PRODUCT (VERSÃO MAIS SIMPLES DE UM PRODUTO QUE PODE SER LANÇADO COM QUANTIDADE MÍNIMA DE ESFORÇO)
+
+CATEGORIA DE PRODUTOS
+- titulo
+
+PRODUTOS
+- nome
+- imagem
+- preço
+- quantidade
+- descrição
+
+VENDAS
+- identificação do comprador
+- identificaçao do produto
+- quantidade comprada
+- endereço de entrega
+- valor total da venda
+- forma de pagamento
+
+USUÁRIOS
+- nome
+- email
+- senha
+
