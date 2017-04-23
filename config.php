@@ -12,9 +12,15 @@ spl_autoload_register(function($class){
 });
 
 
-
-define('DBHOST', 'localhost');
-define('DBNAME', 'loja');
-define('DBUSER', 'root');
-define('DBPASS', 'root');
+if(ENVIRONMENT == 'development'){
+	define('DBHOST', 'localhost');
+	define('DBNAME', 'loja');
+	define('DBUSER', 'root');
+	define('DBPASS', 'root');
+}else{
+	define('DBHOST', 'SERVIDOR');
+	define('DBNAME', 'DB_SERVIDOR');
+	define('DBUSER', 'USER_SERVIDOR');
+	define('DBPASS', 'PASS_SERVIDOR');
+}
 define('DSN', 'mysql:host='.DBHOST.';dbname='.DBNAME.';charset=utf8;');
