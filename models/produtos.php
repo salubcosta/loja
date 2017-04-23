@@ -16,4 +16,17 @@ class produtos extends model{
 		}
 		return $produtos;
 	}
+
+	public function listarCategoria($categoria){
+		$produtos = array();
+		$sql = "SELECT * FROM PRODUTOS WHERE ID_CATEGORIA = :ID_CATEGORIA";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':ID_CATEGORIA',$categoria);
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			$produtos = $sql->fetchAll();
+		}
+		return $produtos;
+	}
 }
