@@ -1,0 +1,48 @@
+body{
+	margin: 0;
+}
+
+.topo{
+	height: 100px;
+	background-color: #eee;
+}
+.menu{
+	height: 50px;
+	background-color: #ddd;
+}
+.menuint{
+	width: 100%;
+	max-width: 800px;
+	margin: auto;
+}
+.menu ul{
+	margin: 0;
+	padding: 0;
+}
+.menu li{
+	list-style: none;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-transform: uppercase;
+}
+.menu li:hover{
+	background-color: #ccc;
+	cursor: pointer;
+}
+.menu a{
+	color: #000;
+}
+.container{
+	width: 100%;
+	max-width: 800px;
+	min-height: 300px;
+	background-color: #ccc;
+	margin: auto;
+}
+.rodape{
+	height: 100px;
+	background-color: #eee;
+}
