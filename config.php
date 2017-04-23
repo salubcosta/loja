@@ -10,3 +10,11 @@ spl_autoload_register(function($class){
 		require_once DIRETORIO.'/core/'.$class.'.php';
 	}
 });
+
+
+
+define('DBHOST', 'localhost');
+define('DBNAME', 'loja');
+define('DBUSER', 'root');
+define('DBPASS', 'root');
+define('DSN', 'mysql:host='.DBHOST.';dbname='.DBNAME.';charset=utf8;');
