@@ -29,4 +29,28 @@ class produtos extends model{
 		}
 		return $produtos;
 	}
+
+	public function getProduto($id){
+		$produtos = array();
+		$sql = "SELECT * FROM PRODUTOS WHERE ID = :ID";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(':ID',addslashes($id));
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			$produtos = $sql->fetch();
+		}
+		return $produtos;
+	}
+
+	public function getVariosProdutos($ids = array()){
+		$produtos = array();
+		$sql = "SELECT * FROM PRODUTOS WHERE ID IN (".implode(',', $ids).");";
+		$sql = $this->db->query($sql);
+		
+		if($sql->rowCount()>0){
+			$produtos = $sql->fetchAll();
+		}
+		return $produtos;
+	}
 }
