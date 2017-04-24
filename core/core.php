@@ -25,14 +25,12 @@ class core{
 		}
 
 		if(!$this->validarController($controller)){
-			echo "Controlador invalido!"; // chamar 404.php
-			exit;
+			header('Location: '.URL.'/naoencontrado');
 		}
 		$_controller = new $controller;
 
 		if(!$this->validarAction($_controller, $action)){
-			echo "Ação/método não existe!"; // chamar 404.php
-			exit;
+			header('Location: '.URL.'/naoencontrado');
 		}
 
 		call_user_func_array(array($_controller, $action), $params);
