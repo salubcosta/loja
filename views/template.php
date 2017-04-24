@@ -5,7 +5,9 @@
 	<link rel="stylesheet" href="<?php echo URL;?>/assets/css/template.css">
 </head>
 <body>
-<div class="topo"></div>
+<div class="topo">
+	<img src="<?php echo URL;?>/assets/images/logo.png" width="120">
+</div>
 <div class="menu">
 	<div class="menuint">
 		<ul>
