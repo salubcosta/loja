@@ -9,7 +9,11 @@ class carrinhoController extends controller{
 		}
 		$produtos = new produtos();
 		$dados['produtos'] = $produtos->getVariosProdutos($prods);
-		$this->carregarTemplate('carrinho', $dados);
+		if(!empty($dados['produtos'])){
+			$this->carregarTemplate('carrinho', $dados);
+		}else{
+			header('Location: '.URL.'/home');
+		}
 	}
 
 	public function add($id = ''){
@@ -23,5 +27,17 @@ class carrinhoController extends controller{
 		}else{
 			$this->carregarTemplate('naoencontrado',[]);
 		}
+	}
+
+	public function remove($id='')
+	{
+		if(!empty($id)){
+			foreach ($_SESSION['carrinho'] as $key => $value) {
+				if($id == $value){
+					unset($_SESSION['carrinho'][$key]);		
+				}
+			}
+		}
+		header('Location: '.URL.'/carrinho');
 	}
 }
