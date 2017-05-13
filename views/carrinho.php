@@ -13,11 +13,12 @@
 		<td><img src="<?php echo URL;?>/assets/images/prods/<?php echo $prod['IMAGEM'];?>" border="0" width="60"></td>
 		<td><?php echo $prod['NOME'];?></td>
 		<td><?php echo 'R$ '.$prod['PRECO'];?></td>
-		<td>[ações]</td>
+		<td><a href="<?php echo URL;?>/carrinho/remove/<?php echo $prod['ID']?>">remover</a></td>
 	</tr>
 	<?php endforeach; ?>
 	<tr>
 		<td colspan="2" align="right">Sub-total: </td>
 		<td align="left"><?php echo 'R$ '.$total; ?></td>
+		<td><a href="#">Finalizar Compra</a></td>
 	</tr>
 </table>
