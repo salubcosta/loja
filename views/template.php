@@ -12,11 +12,17 @@
 	<div class="menuint">
 		<ul>
 			<a href="<?php echo URL;?>"><li>Home</li></a>
-			<a href="#"><li>Empresa</li></a>
+			<a href="<?php echo URL;?>/empresa"><li>Empresa</li></a>
 			<?php foreach($menu as $menuitem):?>
 				<a href="<?php echo URL;?>/categoria/ver/<?php echo $menuitem['ID'].'/'.$menuitem['TITULO'];?>"><li><?php echo $menuitem['TITULO'];?></li></a>
 			<?php endforeach; ?>
-			<a href="#"><li>Contato</li></a>
+			<a href="<?php echo URL;?>/contato"><li>Contato</li></a>
+			<a href="<?php echo URL;?>/carrinho">
+				<div class="carrinho">
+					Carrinho: <br>
+					<?php echo (isset($_SESSION['carrinho'])) ? count($_SESSION['carrinho']): '0'; ?>
+				</div>
+			</a>
 		</ul>
 	</div>
 </div>
