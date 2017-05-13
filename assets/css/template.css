@@ -74,3 +74,21 @@ body{
 	margin-left: 20px;
 	text-align: justify;
 }
+.contato input[type=text],
+.contato input[type=email],
+.contato textarea {
+	width: 400px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 13pt;
+}
+.contato textarea{
+	height: 200px;
+}
+.carrinho{
+	width: 100px;
+	height: 50px;
+	float: right;
+	background-color: #ccc;
+	text-align: right;
+}
