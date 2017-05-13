@@ -45,11 +45,13 @@ class produtos extends model{
 
 	public function getVariosProdutos($ids = array()){
 		$produtos = array();
-		$sql = "SELECT * FROM PRODUTOS WHERE ID IN (".implode(',', $ids).");";
-		$sql = $this->db->query($sql);
-		
-		if($sql->rowCount()>0){
-			$produtos = $sql->fetchAll();
+		if(count($ids) > 0){
+			$sql = "SELECT * FROM PRODUTOS WHERE ID IN (".implode(',', $ids).");";
+			$sql = $this->db->query($sql);
+			
+			if($sql->rowCount()>0){
+				$produtos = $sql->fetchAll();
+			}
 		}
 		return $produtos;
 	}
