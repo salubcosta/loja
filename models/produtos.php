@@ -43,9 +43,9 @@ class produtos extends model{
 		return $produtos;
 	}
 
-	public function getVariosProdutos($ids = array()){
+	public function getProdutosById($ids = array()){
 		$produtos = array();
-		if(count($ids) > 0){
+		if(is_array($ids) && count($ids) > 0){
 			$sql = "SELECT * FROM PRODUTOS WHERE ID IN (".implode(',', $ids).");";
 			$sql = $this->db->query($sql);
 			
