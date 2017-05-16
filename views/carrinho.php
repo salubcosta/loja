@@ -19,6 +19,6 @@
 	<tr>
 		<td colspan="2" align="right">Sub-total: </td>
 		<td align="left"><?php echo 'R$ '.$total; ?></td>
-		<td><a href="#">Finalizar Compra</a></td>
+		<td><a href="<?php echo URL;?>/carrinho/finalizar">Finalizar Compra</a></td>
 	</tr>
 </table>
