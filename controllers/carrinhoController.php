@@ -8,7 +8,7 @@ class carrinhoController extends controller{
 			$prods = $_SESSION['carrinho'];
 		}
 		$produtos = new produtos();
-		$dados['produtos'] = $produtos->getVariosProdutos($prods);
+		$dados['produtos'] = $produtos->getProdutosById($prods);
 		if(!empty($dados['produtos'])){
 			$this->carregarTemplate('carrinho', $dados);
 		}else{
@@ -39,5 +39,26 @@ class carrinhoController extends controller{
 			}
 		}
 		header('Location: '.URL.'/carrinho');
+	}
+
+	public function finalizar()
+	{
+		$dados = array('total'=>0);
+		$pagamentos = new pagamentos();
+		$dados['pagamentos'] = $pagamentos->getPagamentos();
+
+		$prods = array();
+		if(isset($_SESSION['carrinho'])){
+			$prods = $_SESSION['carrinho'];
+		}
+		if(count($prods)>0){
+			$produtos = new produtos();
+			$dados['produtos'] = $produtos->getProdutosById($prods);
+			foreach($dados['produtos'] as $prod){
+				$dados['total'] += $prod['PRECO'];
+			}
+		}
+
+		$this->carregarTemplate('finalizar_compra', $dados);
 	}
 }
